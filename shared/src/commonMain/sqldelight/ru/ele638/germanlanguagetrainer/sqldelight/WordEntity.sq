@@ -1,0 +1,20 @@
+CREATE TABLE WordEntity (
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL
+);
+
+insert:
+INSERT OR REPLACE INTO WordEntity(id, name)
+VALUES(?,?);
+
+getAll:
+SELECT * FROM WordEntity;
+
+updateName:
+UPDATE WordEntity
+SET name = :name
+WHERE id IS :id;
+
+delete:
+DELETE FROM WordEntity
+WHERE id IS :id;

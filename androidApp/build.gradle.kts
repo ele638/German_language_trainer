@@ -6,11 +6,11 @@ plugins {
 
 android {
     namespace = "ru.ele638.germanlanguagetrainer.android"
-    compileSdk = 35
+    compileSdk = 34
     defaultConfig {
         applicationId = "ru.ele638.germanlanguagetrainer.android"
         minSdk = 24
-        targetSdk = 35
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
     }
@@ -42,6 +42,5 @@ dependencies {
     implementation(libs.compose.ui.tooling.preview)
     implementation(libs.compose.material3)
     implementation(libs.androidx.activity.compose)
-    implementation(libs.sqldelight.android.driver)
     debugImplementation(libs.compose.ui.tooling)
 }

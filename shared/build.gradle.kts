@@ -6,14 +6,6 @@ plugins {
     alias(libs.plugins.sqldelight)
 }
 
-sqldelight {
-    databases {
-        create("AppDatabase") {
-            packageName.set("ru.ele638.germanlanguagetrainer.db")
-        }
-    }
-}
-
 kotlin {
     androidTarget {
         compilations.all {
@@ -38,16 +30,24 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
-            implementation(libs.sqldelight.runtime)
+            implementation(libs.sqldelight.coroutines)
         }
         androidMain.dependencies {
-            implementation(libs.sqldelight.android.driver)
+            implementation(libs.sqldelight.android)
         }
-        iosMain.dependencies {
-            implementation(libs.sqldelight.native.driver)
+        nativeMain.dependencies {
+            implementation(libs.sqldelight.native)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
+        }
+    }
+
+    sqldelight {
+        databases {
+            create("AppDatabase") {
+                packageName.set("ru.ele638.germanlanguagetrainer")
+            }
         }
     }
 }

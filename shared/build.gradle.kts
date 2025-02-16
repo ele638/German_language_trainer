@@ -4,6 +4,8 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.sqldelight)
+    alias(libs.plugins.jetbrainsCompose)
+    alias(libs.plugins.compose.compiler)
 }
 
 kotlin {
@@ -31,9 +33,13 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             implementation(libs.sqldelight.coroutines)
+            implementation(compose.foundation)
+            implementation(compose.material3)
+            implementation(libs.lifecycle.viewmodel.compose)
         }
         androidMain.dependencies {
             implementation(libs.sqldelight.android)
+            implementation(libs.compose.ui.tooling)
         }
         nativeMain.dependencies {
             implementation(libs.sqldelight.native)
@@ -61,5 +67,11 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        compose = true
+    }
+    dependencies {
+        debugImplementation(libs.compose.ui.tooling.preview)
     }
 }

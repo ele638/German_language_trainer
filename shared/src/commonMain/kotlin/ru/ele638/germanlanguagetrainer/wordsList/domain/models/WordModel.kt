@@ -1,4 +1,4 @@
-package ru.ele638.germanlanguagetrainer.domain.models
+package ru.ele638.germanlanguagetrainer.wordsList.domain.models
 
 data class WordModel(
     val word: String,

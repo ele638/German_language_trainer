@@ -1,4 +1,4 @@
-package ru.ele638.germanlanguagetrainer.ui
+package ru.ele638.germanlanguagetrainer.core.ui
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.shape.RoundedCornerShape

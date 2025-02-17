@@ -1,4 +1,4 @@
-package ru.ele638.germanlanguagetrainer.db
+package ru.ele638.germanlanguagetrainer.wordsList.data
 
 import app.cash.sqldelight.coroutines.asFlow
 import app.cash.sqldelight.coroutines.mapToList
@@ -6,7 +6,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
 import ru.ele638.germanlanguagetrainer.AppDatabase
 
-class WordDataSource(private val db: AppDatabase) {
+class WordDataSource(db: AppDatabase) {
     private val queries = db.wordEntityQueries
 
     fun insert(id: Long? = null, name: String) {

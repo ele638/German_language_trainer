@@ -1,4 +1,4 @@
-package ru.ele638.germanlanguagetrainer.db
+package ru.ele638.germanlanguagetrainer.core.db
 
 import app.cash.sqldelight.db.SqlDriver
 import app.cash.sqldelight.driver.native.NativeSqliteDriver
